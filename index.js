@@ -1,8 +1,11 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
+
 let votingAge = 18;
 if (votingAge > 18) {
     console.log(true);
+} else {
+     console.log(false)
 };
 
 
@@ -22,6 +25,7 @@ console.log(height);
 
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
+
 let str = "1999";
 let strToNum = Number(str);
 console.log(strToNum);
@@ -32,7 +36,7 @@ console.log(strToNum);
 //Task d: Write a function to multiply a*b 
 
 function multiply(a,b) {
-    return a*b;
+    return a * b;
 }
 multiply(3,2);
 
@@ -42,14 +46,10 @@ multiply(3,2);
 /************************************************************** Task 2 **************************************************************/
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
+
 function ageInDogYears(age) {
-    return age*7;
+    return age * 7;
 }
-
-ageInDogYears(32);
-
-
-
 
 /************************************************************** Task 3 **************************************************************/
 //Dog feeder 
@@ -75,10 +75,12 @@ ageInDogYears(32);
 // execution: if dog is less than a year --> check age as %, determine amount as % of body weight
 
 const dogFeeder = (age,weight) => {
+    // variable for total raw food
     let rawFood;
+    // if dog is younger than 2 months, he only gets milk -- no raw food
     if (age < 0.167) {
        rawFood = 0;
-    } else if (age >= 0.167 && age < 1) {
+    } else if (age >= 0.167 && age < 1) { // if dog is older than 2 months but less than 1 year
       if (age >= 0.167 && age <= 0.33) {
             rawFood = 0.10 * weight;
         } else if (age > 0.33 && age <= 0.583) {
@@ -86,7 +88,7 @@ const dogFeeder = (age,weight) => {
         } else {
             rawFood = 0.04 * weight;
         }
-    } else {
+    } else { // if dog is 1 year or older
         if (weight <= 5) {
             rawFood = 0.05 * weight;
         } else if (weight > 5 && weight <= 10) {
@@ -113,7 +115,7 @@ const dogFeeder = (age,weight) => {
 const game = (userChoice) => {
     let resultString;
     let computerChoice = Math.floor(Math.random() * 3);
-    console.log(computerChoice);
+
     if (computerChoice === 0) {
         computerChoice = 'Rock';
     } else if (computerChoice === 1) {
@@ -232,6 +234,8 @@ const countVowels = (str) => {
     }
     return count;
 }
+
+console.log(countVowels('hello'));
 
 
 
