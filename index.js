@@ -74,7 +74,7 @@ ageInDogYears(32);
 // execution: if dog is 1 year or above --> check weight and depending on that determine amount of food
 // execution: if dog is less than a year --> check age as %, determine amount as % of body weight
 
-let dogFeeder = function(age,weight) {
+const dogFeeder = (age,weight) => {
     let rawFood;
     if (age < 0.167) {
        rawFood = 0;
@@ -157,16 +157,17 @@ const game = (userChoice) => {
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 
-functiom kmToMiles(km) {
+const kmToMiles = (km) => {
     let mile = km / 1.609;
     return mile;
 }
 
 
 
+
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
   
-function feetToCM(feet) {
+const feetToCM = (feet) => {
     let cm = feet * 30.48;
     return cm;
 }
@@ -178,8 +179,15 @@ function feetToCM(feet) {
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
+const annoyingSong = (num) => {
+    while (num > 0) {
+        console.log(`${num} bottles of soda on the wall, ${num} bottles of soda, take one down pass it around ${num - 1} bottles of soda on the wall`);
+        num--;
+    }
+}
 
-
+// 99, 99, 99
+// 98, 98, 
 
 
 /************************************************************** Task 7 **************************************************************/
@@ -191,7 +199,19 @@ function feetToCM(feet) {
 //60s should be D 
 //and anything below 60 should be F
   
-
+const gradeCalc = (mark) => {
+    if (mark >= 90) {
+        return 'A'
+    } else if (mark >= 80) {
+        return 'B'
+    } else if (mark >= 70) {
+        return 'C'
+    } else if (mark >= 60) {
+        return 'D' 
+    } else {
+        return 'F';
+    }
+}
   
   
 
