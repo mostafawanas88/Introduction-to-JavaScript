@@ -157,13 +157,19 @@ const game = (userChoice) => {
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 
-
+functiom kmToMiles(km) {
+    let mile = km / 1.609;
+    return mile;
+}
 
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
   
-
+function feetToCM(feet) {
+    let cm = feet * 30.48;
+    return cm;
+}
 
 
 
