@@ -1,24 +1,40 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
+let votingAge = 18;
+if (votingAge > 18) {
+    console.log(true);
+};
 
 
-
+console.log('hello world');
 
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
+let height = 175;
+let age = 32;
+if (age > 75) {
+    height = 168;
+}
+console.log(height);
 
 
 
 
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
-
+let str = "1999";
+let strToNum = Number(str);
+console.log(strToNum);
 
 
 
 
 //Task d: Write a function to multiply a*b 
 
+function multiply(a,b) {
+    return a*b;
+}
+multiply(3,2);
 
 
 
@@ -26,7 +42,11 @@
 /************************************************************** Task 2 **************************************************************/
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
+function ageInDogYears(age) {
+    return age*7;
+}
 
+ageInDogYears(32);
 
 
 
@@ -48,7 +68,37 @@
 // 7 - 12 months 4% of their body weight
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
-  
+
+// input: dog age (number), dog weight (number)
+// output: feed required (number)
+// execution: if dog is 1 year or above --> check weight and depending on that determine amount of food
+// execution: if dog is less than a year --> check age as %, determine amount as % of body weight
+
+let dogFeeder = function(age,weight) {
+    let rawFood;
+    if (age < 0.167) {
+       rawFood = 0;
+    } else if (age >= 0.167 && age < 1) {
+      if (age >= 0.167 && age <= 0.33) {
+            rawFood = 0.10 * weight;
+        } else if (age > 0.33 && age <= 0.583) {
+            rawFood = 0.05 * weight;
+        } else {
+            rawFood = 0.04 * weight;
+        }
+    } else {
+        if (weight <= 5) {
+            rawFood = 0.05 * weight;
+        } else if (weight > 5 && weight <= 10) {
+            rawFood = 0.04 * weight;
+        } else if (weight > 10 && weight <= 15) {
+            rawFood = 0.03 * weight;
+        } else {
+            rawFood = 0.02 * weight;
+        }
+    }
+    return rawFood;
+}    
 
 
 
@@ -60,7 +110,47 @@
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-  
+const game = (userChoice) => {
+    let resultString;
+    let computerChoice = Math.floor(Math.random() * 3);
+    console.log(computerChoice);
+    if (computerChoice === 0) {
+        computerChoice = 'Rock';
+    } else if (computerChoice === 1) {
+        computerChoice = 'Paper';
+    } else {
+        computerChoice = 'Scissors';
+    }
+
+    if (userChoice === 'Rock') {
+        if (computerChoice === 'Paper') {
+            resultString = 'Computer Won!';
+        } else if (computerChoice === 'Rock') {
+            resultString = 'Draw!';
+        } else {
+            resultString = 'Player Won!';
+        }
+    } else if (userChoice === 'Paper') {
+        if (computerChoice === 'Paper') {
+            resultString = 'Draw!';
+        } else if (computerChoice === 'Rock') {
+            resultString = 'Player Won!';
+        } else {
+            resultString = 'Computer Won!';
+        }
+    } else if (userChoice === 'Scissors') {
+        if (computerChoice === 'Paper') {
+            resultString = 'Player Won!';
+        } else if (computerChoice === 'Rock') {
+            resultString = 'Computer Won!';
+        } else {
+            resultString = 'Draw!';
+        }
+        } else {
+          resultString = 'Error! Please Insert Correct Input!'
+        }
+    return resultString;
+}
   
 
 /************************************************************** Task 5 **************************************************************/
